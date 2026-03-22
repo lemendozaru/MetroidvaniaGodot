@@ -1,5 +1,13 @@
 # Introducción
 
-This is a book created from markdown and executable code.
+El juego pertenece a un género que considero injusto: puede verse y sentirse sencillo, pero su ejecución o desarrollo no lo es. Se esconden varias cosas que intentaré desgranar poco a poco.
 
-See @knuth84 for additional discussion of literate programming.
+1. Debemos crear un sistema de plataformas que sea rico en cuanto a características, además de un sistema de juego que resulte satisfactorio.
+2. Los movimientos del jugador deben ser variados, responsivos y divertidos.
+3. Debemos incluir elementos obligatorios de todo metroidvania, como el *dash*, el *ducking* y el *coyote jump*. Eso obliga a enfocarnos en desarrollar físicas apropiadas de salto y aceleración para que los controles se sientan precisos.
+4. Tenemos que construir buenos niveles, de manera eficiente.
+5. También debemos considerar la existencia de enemigos básicos que llenen dichos niveles y agreguen mayor reto para el jugador.
+6. Estamos obligados a crear animaciones sofisticadas para el personaje, con las piernas y el torso animados de manera independiente. Esto para contar con una mayor flexibilidad y personalización.
+
+Estos requisitos nos plantean entonces la formulación de nuestros objetivos, siendo el principal la creación de un sistema de plataformas que funcione correctamente pero que también se sienta y se vea muy bien al jugarlo.
+
