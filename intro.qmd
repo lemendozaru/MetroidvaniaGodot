@@ -1,6 +1,6 @@
 # Introducción
 
-El juego pertenece a un género que considero injusto: puede verse y sentirse sencillo, pero su ejecución o desarrollo no lo es. Se esconden varias cosas que intentaré desgranar poco a poco.
+El juego pertenece a un género que considero injusto: puede verse y sentirse sencillo, pero su ejecución o desarrollo no lo es. Se esconden varias cosas que intentaremos desgranar poco a poco.
 
 1. Debemos crear un sistema de plataformas que sea rico en cuanto a características, además de un sistema de juego que resulte satisfactorio.
 2. Los movimientos del jugador deben ser variados, responsivos y divertidos.

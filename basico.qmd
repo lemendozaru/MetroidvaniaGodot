@@ -1,0 +1,45 @@
+# Elementos básicos
+
+Comenzaremos creando los elementos básicos de nuestro juego. Por principio, una escena básica y un caracter del jugador estático. Más delante agregamos animaciones más sofisticadas y elementos que mejoren el jugo del juego.
+
+## La escena base
+
+Crearemos la plantilla para nuestros niveles para poder definir elementos comunes. Agregaremos el nodo raíz "Escena 2D" que aparece en el árbol y le llamaremos `Nivel`.
+
+Agregaremos dos `Node2D` a `Nivel` y les llamaremos `Capas` y `Entidades`, respectivamente. El primero contendrá los diferentes mapas, mientras el segundo incluirá los caracteres, tanto del jugador como enemigos.
+
+Guardamos la escena como `nivel.tscn` pero dentro de una nueva carpeta `niveles` dentro de la ya creada para `escenas` (por ejemplo, `escenas/niveles`).
+
+## Configurando el mapa de mosaicos
+
+Seleccionamos `Capas` y le agregamos un nodo `TileMapLayer`. Con este último seleccionado creamos un nuevo set de mosaicos en el inspector (*Tileset -> Nuevo TileSet*). Damos clic en este último para desplegarlo y que aparezca el editor de tilesets.
+
+Desde el sistema de archivos arrastramos `visuales/mosaicos/subterraneo.png` al panel izquierdo del editor de tilesets y ante la pregunta de Godot, le damos en aceptar (sí queremos crear una textura de baldosas).
+
+Luego nos dirigimos al inspector y desplegamos la sección *Physics Layer* para luego dar clic en *Añadir Elemento*. Esta acción creará la capa física 0. Apagamos la máscara 0 y nos devolvemos al editor de tileset.
+
+Damos clic al botón *Pintar* y luego en el desplegable *Selecciona un editor de propiedades* y seleccionamos la *Capa de Física 0* (la de "Terreno"). "Pintamos" los mosaicos que vayamos a utilizar como terreno con colisiones en el set de mosaicos y al terminar simplemente guardamos. No crearemos nuestro escenario aún.
+
+## Creando escenas heredadas
+
+Una vez teniendo la escena base configurada, nos vamos al menú *Escena -> Nueva escena heredada* y elegimos la única que tenemos. Renombramos el nodo padre como `Subterraneo` y guardamos la nueva escena como `subterraneo.tscn`. Damos clic en el `TileMapLayer` y ahora sí creamos un sistema sencillo de plataformas, para ir probando nuestro juego o bien, si así lo deseamos, vayamos creando nuestro nivel definitivo.
+
+## Creando al caracter del jugador
+
+Creamos una nueva escena con un nodo raíz del tipo `CharacterBody2D` y le llamaremos `Jugador`. Guardamos la escena en la carpeta `escenas/caracteres` como `jugador.tscn`. Agregamos a `Jugador` un `Node2D` que llamaremos `Visuales`. Dentro de `Visuales` vamos a agregar dos nodos `Sprite2D`. A uno le llamaremos `Torso` y al otro `Piernas`.
+
+## Configurando al caracter del jugador
+
+Elegimos `Torso` y en el inspector cargamos en su propiedad *Texture* el archivo `visuales/caracteres/jugador.png`. Desplegamos la sección *Animation* y modificamos los valores de *HFrames* y *VFrames* para que solo muestre un solo cuadro de animación. En nuestro caso, fue de `8` y `5`, respectivamente.
+
+Para `Piernas` hacemos lo mismo, con la salvedad de que al final ajustamos la propiedad *Frame Coords Y* a `3`. Deberían verse tanto el torso como las piernas. Sin embargo, no están centradas. Debemos modificar la *Position* de ambos nodos de manera que se consiga el efecto de tener un solo "sprite". Un valor de *Position Y* de `-9` para el torso y de `-6` para las piernas funcionan bien.
+
+Por último, agregamos la forma de colisión a nuestro `Jugador`, siendo una cápsula la adecuada. La ajustamos de manera que solo incluya el cuerpo del jugador pero no su arma.
+
+## Ensamblando la escena
+
+Seleccionamos la escena base (`nivel.tscn`), luego el nodo `Entidades`. Enseguida le instanciamos la escena `jugador.tscn`. Listo, ya podemos ver al jugador tanto en la escena base como en `subterraneo.tscn`. Entremos a esta última y posicionemos el caracter de acuerdo al nivel que creamos.
+
+Volvemos a la escena del `Jugador` y le agregamos a este una `Camera2D`. Cambiamos el *Zoom* a 3 y establecemos `subterraneo.tscn` como la escena principal. Podemos ejecutar el juego y debería verse "bien". Listo, ya hemos configurado la estructura base.
+
+

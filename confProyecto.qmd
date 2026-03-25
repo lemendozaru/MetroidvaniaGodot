@@ -1,0 +1,22 @@
+# Comenzando
+
+Comenzaremos creando solo dos carpetas: `escenas` y `programas`. En esta ocasión no armaremos una para los elementos multimedia (assets), ya que ahora trataremos de tener una organización más práctica. Cada elemento estará en su respectiva carpeta.
+
+Llevaremos nuestras carpetas de assets (`sonidos` y `visuales`) al sistema de archivos de Godot.
+
+## Configuración del proyecto
+
+Cambiaremos tres aspectos del proyecto. Nos dirigimos a la configuración del proyecto y cambiamos el tamaño de la ventana en *Visualización -> Ventana* a un ancho de `1920` por un alto de `1080` (`1080p`).
+
+Luego, buscamos la sección *Nombres de capas -> Física 2D* y nombraremos las primeras cuatro como sigue:
+
+1. Terreno
+2. Jugador
+3. Enemigos
+4. Balas
+
+Por último, en *Renderizado -> Texturas* cambiaremos el filtro de texturas a `Nearest`.
+
+## Mapeado de controles
+
+En la pestaña de *Mapa de entrada* definiremos los controles para cuatro acciones fundamentales en nuestro juego: `izquierda`, `derecha`, `saltar` y `disparar`. Podemos asignarlas a nuestro gusto, aunque en este caso se optó por mapear las flechas direccionales del teclado más las correspondientes "wasd" para el movimiento del jugador. Se sugiere {{<kbd Espacio>}} para el salto y el clic del ratón para el disparo.
